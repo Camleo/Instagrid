@@ -18,20 +18,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
        var viewIsEmpty = true // This Boolean will permit to check wether the grid is empty or not before sharing
    
     
-  @objc func orientationChanged() {
-  if UIDevice.current.orientation.isLandscape {
-    
-              swipeLabel.text = "Swipe Left to share"
-    swipeImageView.image = UIImage(named: "ArrowLeft")
-          } else {
-             
-              swipeLabel.text = "Swipe Up to share"
-    swipeImageView.image = UIImage(named: "ArrowUp")
-          }
-      }
+ 
 
   
-     
+
     
     @IBOutlet weak var swipeImageView: UIImageView!
     
@@ -95,13 +85,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
                mainView.addGestureRecognizer(swipeLeft)
                
-        
-        
-//        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-//        let image = renderer.image { ctx in
-//            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-//        }
-    }
+        }
+    
+    
+    
     
     @IBAction func holdSwipe(_ sender: UISwipeGestureRecognizer?) {
            if let gesture = sender {
@@ -114,6 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
        }
 
  
+    
     
     @IBAction func layout1Button(_ sender: UIButton) {
               self.upView.isHidden = false
@@ -167,6 +155,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
         
     }
+    
+    
+    
+    
+    @objc func orientationChanged() {
+     if UIDevice.current.orientation.isLandscape {
+       
+                 swipeLabel.text = "Swipe Left to share"
+       swipeImageView.image = UIImage(named: "ArrowLeft")
+             } else {
+                
+                 swipeLabel.text = "Swipe Up to share"
+       swipeImageView.image = UIImage(named: "ArrowUp")
+             }
+         }
+    
+    
+    
    
            // METHOD FOR THE DELEGATE: when the user picks up an image from the photo library, image is set to the button
            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -177,10 +183,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                }
                dismiss(animated: true, completion: nil)
            }
+    
+    
+    
+    
            // METHOD FOR THE DELEGATE: when the user cancels image picking
            func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
                dismiss(animated: true, completion: nil)
            }
+    
     
          
                  func moveMainViewUp() {
@@ -191,6 +202,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                                  self.checkMainView()
                              })
                          }
+    
+    
+    
                          func moveMainViewLeft() {
                              UIView.animate(withDuration: 2, animations: {
                                  self.mainView.transform = CGAffineTransform(translationX: -UIScreen.main.bounds.width, y: 0)
@@ -200,6 +214,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                              })
                          }
            
+    
+    
            func checkMainView() {
                     let alert = UIAlertController(title: "Empty View", message: "Are you sure you want to share an empty view ?", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
@@ -213,6 +229,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         shareMainView()
                     }
                 }
+    
+    
+    
                 func shareMainView() {
                     let content = mainView.asImage()
                     let activityController = UIActivityViewController(activityItems: [content], applicationActivities: nil)
