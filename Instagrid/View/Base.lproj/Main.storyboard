@@ -20,10 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1nH-Fv-YVB">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1nH-Fv-YVB" userLabel="BottomStack View">
                                 <rect key="frame" x="57" y="772" width="300" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-de-rgk">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnq-de-rgk" userLabel="LeftView">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Layout1" translatesAutoresizingMaskIntoConstraints="NO" id="VOA-S4-DH4">
@@ -44,7 +44,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKe-hy-t5X">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKe-hy-t5X" userLabel="CentralView">
                                         <rect key="frame" x="110" y="0.0" width="80" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Layout2" translatesAutoresizingMaskIntoConstraints="NO" id="P09-5l-6Wh">
@@ -65,7 +65,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD9-T8-RdI">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD9-T8-RdI" userLabel="RightView">
                                         <rect key="frame" x="220" y="0.0" width="80" height="80"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Layout3" translatesAutoresizingMaskIntoConstraints="NO" id="5fs-mu-Fqi">
@@ -105,40 +105,7 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIb-Z1-Q5L">
-                                <rect key="frame" x="136" y="44" width="142" height="39"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1a-34-Ydm" userLabel="swipeView">
-                                <rect key="frame" x="82" y="90" width="250" height="205"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-yW-Ufi" userLabel="swipeImageView">
-                                        <rect key="frame" x="115" y="67.666666666666657" width="20" height="20"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="T0D-Aa-Rcg"/>
-                                            <constraint firstAttribute="width" secondItem="TLH-yW-Ufi" secondAttribute="height" multiplier="1:1" id="eGV-mc-CIb"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-xG-jSB">
-                                        <rect key="frame" x="93.666666666666657" y="95.666666666666657" width="63" height="30"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="TLH-yW-Ufi" firstAttribute="centerY" secondItem="x1a-34-Ydm" secondAttribute="centerY" constant="-25" id="GpK-hB-JrJ"/>
-                                    <constraint firstItem="LOF-xG-jSB" firstAttribute="top" secondItem="TLH-yW-Ufi" secondAttribute="bottom" constant="8" id="N3h-bu-nTq"/>
-                                    <constraint firstItem="TLH-yW-Ufi" firstAttribute="centerX" secondItem="x1a-34-Ydm" secondAttribute="centerX" id="jG7-Mn-3hB"/>
-                                    <constraint firstItem="LOF-xG-jSB" firstAttribute="centerX" secondItem="x1a-34-Ydm" secondAttribute="centerX" id="uGd-Jh-66i"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdF-eJ-PoX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdF-eJ-PoX" userLabel="MainView">
                                 <rect key="frame" x="57" y="303" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o5d-vE-sWY" userLabel="MainView">
@@ -352,6 +319,39 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1a-34-Ydm" userLabel="swipeView">
+                                <rect key="frame" x="82" y="90" width="250" height="205"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-yW-Ufi" userLabel="swipeImageView">
+                                        <rect key="frame" x="115" y="67.666666666666657" width="20" height="20"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="T0D-Aa-Rcg"/>
+                                            <constraint firstAttribute="width" secondItem="TLH-yW-Ufi" secondAttribute="height" multiplier="1:1" id="eGV-mc-CIb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-xG-jSB">
+                                        <rect key="frame" x="93.666666666666657" y="95.666666666666657" width="63" height="30"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TLH-yW-Ufi" firstAttribute="centerY" secondItem="x1a-34-Ydm" secondAttribute="centerY" constant="-25" id="GpK-hB-JrJ"/>
+                                    <constraint firstItem="LOF-xG-jSB" firstAttribute="top" secondItem="TLH-yW-Ufi" secondAttribute="bottom" constant="8" id="N3h-bu-nTq"/>
+                                    <constraint firstItem="TLH-yW-Ufi" firstAttribute="centerX" secondItem="x1a-34-Ydm" secondAttribute="centerX" id="jG7-Mn-3hB"/>
+                                    <constraint firstItem="LOF-xG-jSB" firstAttribute="centerX" secondItem="x1a-34-Ydm" secondAttribute="centerX" id="uGd-Jh-66i"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIb-Z1-Q5L">
+                                <rect key="frame" x="136" y="44" width="142" height="39"/>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.71932816509999997" green="0.84183174370000002" blue="0.89804965260000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -394,13 +394,13 @@
                                 <exclude reference="fZy-KP-6Mk"/>
                                 <exclude reference="hrk-kG-oWR"/>
                                 <exclude reference="2Y2-br-b0S"/>
+                                <exclude reference="A9K-v0-Cvd"/>
+                                <exclude reference="ChP-di-K5W"/>
+                                <exclude reference="SA0-Gg-wco"/>
                                 <exclude reference="aVU-yd-GcZ"/>
                                 <exclude reference="bUy-aG-GIw"/>
                                 <exclude reference="xat-E0-qpG"/>
                                 <exclude reference="z10-MC-Xbp"/>
-                                <exclude reference="A9K-v0-Cvd"/>
-                                <exclude reference="ChP-di-K5W"/>
-                                <exclude reference="SA0-Gg-wco"/>
                                 <exclude reference="ffu-XP-16T"/>
                                 <exclude reference="h9H-vD-vk4"/>
                                 <exclude reference="ymh-W4-Nyd"/>
@@ -417,18 +417,18 @@
                                 <exclude reference="prd-aa-is1"/>
                                 <exclude reference="qgQ-1X-bof"/>
                                 <exclude reference="vdF-1q-HET"/>
-                                <exclude reference="aVU-yd-GcZ"/>
-                                <exclude reference="bUy-aG-GIw"/>
-                                <exclude reference="e56-ah-aga"/>
-                                <exclude reference="leP-tw-2rK"/>
-                                <include reference="xat-E0-qpG"/>
-                                <include reference="z10-MC-Xbp"/>
                                 <exclude reference="8K6-Oj-khj"/>
                                 <include reference="A9K-v0-Cvd"/>
                                 <include reference="ChP-di-K5W"/>
                                 <include reference="SA0-Gg-wco"/>
                                 <exclude reference="eOQ-eV-Jij"/>
                                 <exclude reference="pNE-S2-2rB"/>
+                                <exclude reference="aVU-yd-GcZ"/>
+                                <exclude reference="bUy-aG-GIw"/>
+                                <exclude reference="e56-ah-aga"/>
+                                <exclude reference="leP-tw-2rK"/>
+                                <include reference="xat-E0-qpG"/>
+                                <include reference="z10-MC-Xbp"/>
                                 <exclude reference="96e-hx-DJt"/>
                                 <include reference="ffu-XP-16T"/>
                                 <exclude reference="h9H-vD-vk4"/>
