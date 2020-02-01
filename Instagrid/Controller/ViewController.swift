@@ -37,17 +37,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var TLeft: UIView!
     
     
-    @IBOutlet weak var TCenter: UIView!
-    
-    
     @IBOutlet weak var TRight: UIView!
     
     
     @IBOutlet weak var BLeft: UIView!
-    
-    
-    @IBOutlet weak var BCenter: UIView!
-    
     
     @IBOutlet weak var upView: UIView!
     
@@ -113,9 +106,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.downView.isHidden = true
         self.squareView.isHidden = true
         self.TLeft.isHidden = true
-        self.TCenter.isHidden = false
-        self.TRight.isHidden = true
-        self.BCenter.isHidden = true
+        self.TRight.isHidden = false
         self.BLeft.isHidden = false
         self.BRight.isHidden = false
         
@@ -126,11 +117,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.downView.isHidden = false
         self.squareView.isHidden = true
         self.TLeft.isHidden = false
-        self.TCenter.isHidden = true
         self.TRight.isHidden = false
         self.BLeft.isHidden = true
-        self.BRight.isHidden = true
-        self.BCenter.isHidden = false
+        self.BRight.isHidden = false
         
     }
     
@@ -139,12 +128,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.upView.isHidden = true
         self.downView.isHidden = true
         self.squareView.isHidden = false
-        self.TCenter.isHidden = true
         self.TLeft.isHidden = false
         self.TRight.isHidden = false
         self.BLeft.isHidden = false
         self.BRight.isHidden = false
-        self.BCenter.isHidden = true
         
     }
     
@@ -263,13 +250,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
 
 // This UIView extension will permit to convert our MainView to an image file
+
 extension UIView {
+    
+
+
     func asImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(bounds: bounds)
-        return renderer.image { rendererContext in
-            layer.render(in: rendererContext.cgContext)
+        let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
+                let image = renderer.image { ctx in
+                    self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+                }
+                return image
+            }
         }
-    }
-}
+        
 
 
