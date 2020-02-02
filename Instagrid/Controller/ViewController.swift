@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController {
     
     
     let imagePicker = UIImagePickerController()
@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
-   //MARK: - Outlet
+    //MARK: - Outlet
     
     
     @IBOutlet weak var swipeImageView: UIImageView!
@@ -80,6 +80,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(holdSwipe(_:)))
         swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         mainView.addGestureRecognizer(swipeLeft)
+        
+        
         
     }
     
@@ -149,8 +151,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-  //MARK: - Animation text
-
+    //MARK: - Animation text
+    
     
     @objc func orientationChanged() {
         if UIDevice.current.orientation.isLandscape {
@@ -242,27 +244,49 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }, completion: nil)
         }
     }
-    
 }
 
 
-//MARK: - Convert MainView
 
+
+
+//MARK: - Convert MainView
+extension UIView {
+    
+   func asImage() -> UIImage {
+    
+            // Convert view (squareImagesView) in UIImage
+            let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
+            let image = renderer.image { ctx in
+                self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+            }
+            return image
+        }
+    }
+    
+    
+    
+    extension ViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+       
+        
+        /// set image in squareCenterView
+        func pickedImage(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            let image = info[.originalImage] as? UIImage
+            currentButton?.setImage(image, for: .normal)
+            // selectedButton?.contentMode = .scaleAspectFit
+            
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    
 
 // This UIView extension will permit to convert our MainView to an image file
 
-extension UIView {
-    
 
 
-    func asImage() -> UIImage {
-        let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
-                let image = renderer.image { ctx in
-                    self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-                }
-                return image
-            }
-        }
-        
+
+
+
 
 
