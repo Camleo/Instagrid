@@ -29,7 +29,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-QK-RCZ" userLabel="Stack ViewUp">
                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="141"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72x-Xm-xjJ" userLabel="TLeftView">
+                                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="72x-Xm-xjJ" userLabel="TLeftView">
                                                         <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="aMq-yw-M5l">
@@ -58,7 +58,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="XM2-NX-NGh" secondAttribute="trailing" id="j90-4Q-xfR"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-YI-MvB" userLabel="TRightView">
+                                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0rF-YI-MvB" userLabel="TRightView">
                                                         <rect key="frame" x="149" y="0.0" width="141" height="141"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="VI6-9b-qwB">
@@ -92,7 +92,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YHE-pD-LBm" userLabel="Stack ViewDown">
                                                 <rect key="frame" x="0.0" y="149" width="290" height="141"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="77m-W4-3QC" userLabel="BLeftView">
+                                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="77m-W4-3QC" userLabel="BLeftView">
                                                         <rect key="frame" x="0.0" y="0.0" width="141" height="141"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="ZFb-yG-rOP">
@@ -121,7 +121,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="dqL-ys-rrS" secondAttribute="bottom" id="yey-Dl-MhD"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIP-fd-1D7" userLabel="BRightView">
+                                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="MIP-fd-1D7" userLabel="BRightView">
                                                         <rect key="frame" x="149" y="0.0" width="141" height="141"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="9mb-Bw-HBr">
@@ -183,10 +183,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1a-34-Ydm" userLabel="swipeView">
-                                <rect key="frame" x="82" y="90" width="250" height="205"/>
+                                <rect key="frame" x="82" y="90.333333333333329" width="250" height="204.66666666666669"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-yW-Ufi" userLabel="swipeImageView">
-                                        <rect key="frame" x="115" y="67.666666666666657" width="20" height="20"/>
+                                        <rect key="frame" x="115" y="67.333333333333329" width="20" height="20"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="T0D-Aa-Rcg"/>
@@ -194,7 +194,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-xG-jSB">
-                                        <rect key="frame" x="93.666666666666657" y="95.666666666666657" width="63" height="30"/>
+                                        <rect key="frame" x="93.666666666666657" y="95.333333333333329" width="63" height="30"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -210,7 +210,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIb-Z1-Q5L">
-                                <rect key="frame" x="136" y="44" width="142" height="39"/>
+                                <rect key="frame" x="136" y="44" width="142" height="35"/>
                                 <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -378,16 +378,16 @@
                                 <exclude reference="2Y2-br-b0S"/>
                                 <exclude reference="VsZ-8i-vVc"/>
                                 <exclude reference="cQN-98-Hy6"/>
+                                <exclude reference="A9K-v0-Cvd"/>
+                                <exclude reference="ChP-di-K5W"/>
+                                <exclude reference="SA0-Gg-wco"/>
+                                <exclude reference="ylU-aZ-8XY"/>
                                 <exclude reference="3PP-Lg-Esq"/>
                                 <exclude reference="aVU-yd-GcZ"/>
                                 <exclude reference="bUy-aG-GIw"/>
                                 <exclude reference="qjL-th-h1o"/>
                                 <exclude reference="xat-E0-qpG"/>
                                 <exclude reference="z10-MC-Xbp"/>
-                                <exclude reference="A9K-v0-Cvd"/>
-                                <exclude reference="ChP-di-K5W"/>
-                                <exclude reference="SA0-Gg-wco"/>
-                                <exclude reference="ylU-aZ-8XY"/>
                                 <exclude reference="3O5-OK-KUv"/>
                                 <exclude reference="P1K-fW-3qM"/>
                                 <exclude reference="ffu-XP-16T"/>
@@ -405,12 +405,12 @@
                                 <exclude reference="prd-aa-is1"/>
                                 <exclude reference="qgQ-1X-bof"/>
                                 <exclude reference="vdF-1q-HET"/>
+                                <exclude reference="eOQ-eV-Jij"/>
+                                <include reference="ylU-aZ-8XY"/>
                                 <include reference="3PP-Lg-Esq"/>
                                 <exclude reference="e56-ah-aga"/>
                                 <exclude reference="leP-tw-2rK"/>
                                 <include reference="qjL-th-h1o"/>
-                                <exclude reference="eOQ-eV-Jij"/>
-                                <include reference="ylU-aZ-8XY"/>
                                 <include reference="3O5-OK-KUv"/>
                                 <exclude reference="96e-hx-DJt"/>
                                 <include reference="P1K-fW-3qM"/>
@@ -428,18 +428,18 @@
                                 <exclude reference="prd-aa-is1"/>
                                 <exclude reference="qgQ-1X-bof"/>
                                 <exclude reference="vdF-1q-HET"/>
-                                <exclude reference="aVU-yd-GcZ"/>
-                                <exclude reference="bUy-aG-GIw"/>
-                                <exclude reference="e56-ah-aga"/>
-                                <exclude reference="leP-tw-2rK"/>
-                                <include reference="xat-E0-qpG"/>
-                                <include reference="z10-MC-Xbp"/>
                                 <exclude reference="8K6-Oj-khj"/>
                                 <include reference="A9K-v0-Cvd"/>
                                 <include reference="ChP-di-K5W"/>
                                 <include reference="SA0-Gg-wco"/>
                                 <exclude reference="eOQ-eV-Jij"/>
                                 <exclude reference="pNE-S2-2rB"/>
+                                <exclude reference="aVU-yd-GcZ"/>
+                                <exclude reference="bUy-aG-GIw"/>
+                                <exclude reference="e56-ah-aga"/>
+                                <exclude reference="leP-tw-2rK"/>
+                                <include reference="xat-E0-qpG"/>
+                                <include reference="z10-MC-Xbp"/>
                                 <exclude reference="96e-hx-DJt"/>
                                 <include reference="ffu-XP-16T"/>
                                 <exclude reference="h9H-vD-vk4"/>

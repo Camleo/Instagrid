@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     let imagePicker = UIImagePickerController()
@@ -266,23 +266,7 @@ extension UIView {
     
     
     
-    extension ViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-       
-        
-        /// set image in squareCenterView
-        func pickedImage(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            let image = info[.originalImage] as? UIImage
-            currentButton?.setImage(image, for: .normal)
-            // selectedButton?.contentMode = .scaleAspectFit
-            
-            picker.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    
-
-// This UIView extension will permit to convert our MainView to an image file
-
+   
 
 
 
