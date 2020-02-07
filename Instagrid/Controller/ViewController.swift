@@ -24,44 +24,23 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     //MARK: - Outlet
     
     
-    @IBOutlet weak var swipeImageView: UIImageView!
-    
-    @IBOutlet weak var stackviewUp: UIStackView!
-    
-    @IBOutlet weak var stackviewBottom: UIStackView!
-    
-    
-    @IBOutlet weak var mainView: UIStackView!
-    
-    
-    @IBOutlet weak var TLeft: UIView!
-    
-    
-    @IBOutlet weak var TRight: UIView!
-    
-    
-    @IBOutlet weak var BLeft: UIView!
-    
-    @IBOutlet weak var upView: UIView!
-    
-    @IBOutlet weak var downView: UIView!
-    
-    @IBOutlet weak var squareView: UIView!
-    
-    @IBOutlet weak var BRight: UIView!
-    
-    
-    @IBOutlet weak var layout1: UIImageView!
-    
-    
-    @IBOutlet weak var layout2: UIImageView!
-    
-    
-    @IBOutlet weak var layout3: UIImageView!
-    
-    
+    // I create an Outlet collection to identify each photo button
+    @IBOutlet var photoButtons: [UIButton]!
+    // I create an Outlet collection to identify each layout button
+    @IBOutlet var layoutButtons: [UIButton]!
+    // I create an OUtlet of the mainView so I can share it
+    @IBOutlet weak var mainView: UIView!
+    // I create an Outlet of the Swipe Text Label to init the swipe gesture from it
     @IBOutlet weak var swipeLabel: UILabel!
     
+    @IBOutlet weak var SwipeImageView: UIImageView!
+    
+    //This Method will make all photo buttons visible:
+    func showButtons() {
+        for button in photoButtons {
+            button.isHidden = false
+        }
+    }
     
     
     //MARK: - ViewDidLoad
@@ -87,8 +66,8 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     
     
-    //MARK: - Action , Button and Swipe
     
+    //MARK: - Action , Button and Swipe
     
     @IBAction func holdSwipe(_ sender: UISwipeGestureRecognizer?) {
         if let gesture = sender {
@@ -103,38 +82,25 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     
     
-    @IBAction func layout1Button(_ sender: UIButton) {
-        self.upView.isHidden = false
-        self.downView.isHidden = true
-        self.squareView.isHidden = true
-        self.TLeft.isHidden = true
-        self.TRight.isHidden = false
-        self.BLeft.isHidden = false
-        self.BRight.isHidden = false
-        
-    }
-    
-    @IBAction func layout2Button(_ sender: Any) {
-        self.upView.isHidden = true
-        self.downView.isHidden = false
-        self.squareView.isHidden = true
-        self.TLeft.isHidden = false
-        self.TRight.isHidden = false
-        self.BLeft.isHidden = true
-        self.BRight.isHidden = false
-        
-    }
-    
-    
-    @IBAction func layout3Button(_ sender: UIButton) {
-        self.upView.isHidden = true
-        self.downView.isHidden = true
-        self.squareView.isHidden = false
-        self.TLeft.isHidden = false
-        self.TRight.isHidden = false
-        self.BLeft.isHidden = false
-        self.BRight.isHidden = false
-        
+    @IBAction func changeLayout(_ sender: UIButton) {
+        sender.setBackgroundImage(UIImage(named: "Selected"), for: UIControl.State.normal)
+        switch sender {
+        case layoutButtons[0]:
+            layoutButtons[1].setBackgroundImage(UIImage(named: "unselect2"), for: UIControl.State.normal)
+            layoutButtons[2].setBackgroundImage(UIImage(named: "unselect3"), for: UIControl.State.normal)
+            showButtons()
+            photoButtons[0].isHidden = true
+        case layoutButtons[1]:
+            layoutButtons[0].setBackgroundImage(UIImage(named: "unselect1"), for: UIControl.State.normal)
+            layoutButtons[2].setBackgroundImage(UIImage(named: "unselect3"), for: UIControl.State.normal)
+            showButtons()
+            photoButtons[2].isHidden = true
+        case layoutButtons[2]:
+            layoutButtons[0].setBackgroundImage(UIImage(named: "unselect1"), for: UIControl.State.normal)
+            layoutButtons[1].setBackgroundImage(UIImage(named: "unselect2"), for: UIControl.State.normal)
+            showButtons()
+        default: break
+        }
     }
     
     
@@ -158,11 +124,11 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         if UIDevice.current.orientation.isLandscape {
             
             swipeLabel.text = "Swipe Left to share"
-            swipeImageView.image = UIImage(named: "ArrowLeft")
+            SwipeImageView.image = UIImage(named: "ArrowLeft")
         } else {
             
             swipeLabel.text = "Swipe Up to share"
-            swipeImageView.image = UIImage(named: "ArrowUp")
+            SwipeImageView.image = UIImage(named: "ArrowUp")
         }
     }
     
@@ -253,20 +219,20 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
 //MARK: - Convert MainView
 extension UIView {
     
-   func asImage() -> UIImage {
-    
-            // Convert view (squareImagesView) in UIImage
-            let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
-            let image = renderer.image { ctx in
-                self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-            }
-            return image
+    func asImage() -> UIImage {
+        
+        // Convert view (squareImagesView) in UIImage
+        let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
+        let image = renderer.image { ctx in
+            self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
         }
+        return image
     }
-    
-    
-    
-   
+}
+
+
+
+
 
 
 

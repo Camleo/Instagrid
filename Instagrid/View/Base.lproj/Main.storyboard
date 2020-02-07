@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,6 +27,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OOn-PR-L69" userLabel="SwipeStack View">
+                                <rect key="frame" x="148.66666666666666" y="200.66666666666666" width="77.666666666666657" height="64.999999999999972"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-yW-Ufi" userLabel="swipeImageView">
+                                        <rect key="frame" x="29" y="0.0" width="20" height="20"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="T0D-Aa-Rcg"/>
+                                            <constraint firstAttribute="width" secondItem="TLH-yW-Ufi" secondAttribute="height" multiplier="1:1" id="eGV-mc-CIb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-xG-jSB">
+                                        <rect key="frame" x="0.0" y="28" width="77.666666666666671" height="37"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdF-eJ-PoX" userLabel="MainView">
                                 <rect key="frame" x="57" y="275.66666666666669" width="261" height="261.00000000000006"/>
                                 <subviews>
@@ -102,34 +123,34 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gm8-IF-S40" userLabel="BottomStack View">
                                 <rect key="frame" x="47.666666666666657" y="678" width="280" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-1K-aXl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-1K-aXl" userLabel="LeftButton">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GvK-1K-aXl" secondAttribute="height" multiplier="1:1" id="olk-uE-mgA"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout1"/>
                                         <connections>
-                                            <action selector="layout1Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ob-0E-MVz"/>
+                                            <action selector="changeLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alb-LZ-NVw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEP-mt-AVb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEP-mt-AVb" userLabel="CentralButton">
                                         <rect key="frame" x="100" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nEP-mt-AVb" secondAttribute="height" multiplier="1:1" id="aF6-8P-pDE"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout2"/>
                                         <connections>
-                                            <action selector="layout2Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oqv-fe-4qM"/>
+                                            <action selector="changeLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSS-Bs-eTv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnF-Xx-enO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnF-Xx-enO" userLabel="RightButton">
                                         <rect key="frame" x="200" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XnF-Xx-enO" secondAttribute="height" multiplier="1:1" id="QRb-3e-u4c"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout3"/>
                                         <connections>
-                                            <action selector="layout3Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hnj-mn-Rou"/>
+                                            <action selector="changeLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPi-6v-BOU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -148,26 +169,6 @@
                                         <include reference="Pn1-Sx-XYO"/>
                                     </mask>
                                 </variation>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OOn-PR-L69" userLabel="SwipeStack View">
-                                <rect key="frame" x="148.66666666666666" y="200.66666666666666" width="77.666666666666657" height="64.999999999999972"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-yW-Ufi" userLabel="swipeImageView">
-                                        <rect key="frame" x="29" y="0.0" width="20" height="20"/>
-                                        <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="T0D-Aa-Rcg"/>
-                                            <constraint firstAttribute="width" secondItem="TLH-yW-Ufi" secondAttribute="height" multiplier="1:1" id="eGV-mc-CIb"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-xG-jSB">
-                                        <rect key="frame" x="0.0" y="28" width="77.666666666666671" height="37"/>
-                                        <gestureRecognizers/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.71932816509999997" green="0.84183174370000002" blue="0.89804965260000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -200,10 +201,10 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="I2H-q6-nOU"/>
-                                <exclude reference="hUu-cJ-cm5"/>
-                                <exclude reference="jGa-4R-HUS"/>
                                 <exclude reference="A9K-v0-Cvd"/>
                                 <exclude reference="XUI-PY-lYr"/>
+                                <exclude reference="hUu-cJ-cm5"/>
+                                <exclude reference="jGa-4R-HUS"/>
                                 <exclude reference="0h2-F1-xHD"/>
                                 <exclude reference="G4Z-jO-wxQ"/>
                                 <exclude reference="QM6-ST-uda"/>
@@ -217,11 +218,11 @@
                                 <include reference="I2H-q6-nOU"/>
                                 <exclude reference="TXS-kc-xJn"/>
                                 <exclude reference="l6D-R5-i1Z"/>
+                                <exclude reference="Als-in-eAo"/>
+                                <exclude reference="XUI-PY-lYr"/>
                                 <exclude reference="UcL-Jc-z73"/>
                                 <include reference="hUu-cJ-cm5"/>
                                 <include reference="jGa-4R-HUS"/>
-                                <exclude reference="Als-in-eAo"/>
-                                <exclude reference="XUI-PY-lYr"/>
                                 <include reference="0h2-F1-xHD"/>
                                 <include reference="G4Z-jO-wxQ"/>
                                 <exclude reference="GOR-V0-vXI"/>
@@ -242,10 +243,17 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mainView" destination="o5d-vE-sWY" id="RXY-lW-cIt"/>
-                        <outlet property="stackviewUp" destination="mzg-QK-RCZ" id="GQ9-Qo-hsq"/>
+                        <outlet property="SwipeImageView" destination="TLH-yW-Ufi" id="ZSW-KP-IDE"/>
+                        <outlet property="mainView" destination="qdF-eJ-PoX" id="A9Z-uT-I1k"/>
                         <outlet property="swipeImageView" destination="TLH-yW-Ufi" id="dQ7-Vh-dlz"/>
                         <outlet property="swipeLabel" destination="LOF-xG-jSB" id="Sqa-Ie-kFX"/>
+                        <outletCollection property="layoutButtons" destination="XnF-Xx-enO" collectionClass="NSMutableArray" id="jtQ-k3-0oJ"/>
+                        <outletCollection property="photoButtons" destination="XM2-NX-NGh" collectionClass="NSMutableArray" id="NRu-lG-xrV"/>
+                        <outletCollection property="photoButtons" destination="j6S-5a-b19" collectionClass="NSMutableArray" id="sH8-ma-WxK"/>
+                        <outletCollection property="photoButtons" destination="dqL-ys-rrS" collectionClass="NSMutableArray" id="O44-2D-oiS"/>
+                        <outletCollection property="photoButtons" destination="CgG-mg-pru" collectionClass="NSMutableArray" id="zBI-Jd-0d8"/>
+                        <outletCollection property="layoutButtons" destination="GvK-1K-aXl" collectionClass="NSMutableArray" id="SfM-NY-qUh"/>
+                        <outletCollection property="layoutButtons" destination="nEP-mt-AVb" collectionClass="NSMutableArray" id="zyC-gF-Yzs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
