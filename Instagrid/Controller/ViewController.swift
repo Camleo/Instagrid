@@ -26,7 +26,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     // I create an Outlet collection to identify each photo button
     @IBOutlet var photoButtons: [UIButton]!
-    // I create an Outlet collection to identify each layout button
+    
     @IBOutlet var layoutButtons: [UIButton]!
     // I create an OUtlet of the mainView so I can share it
     @IBOutlet weak var mainView: UIView!
@@ -50,6 +50,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
         super.viewDidLoad()
         imagePicker.delegate = self
         
+        
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
         
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(holdSwipe(_:)))
@@ -69,6 +70,28 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     //MARK: - Action , Button and Swipe
     
+    
+    @IBAction func changeLayouts(_ sender: UIButton) {
+        sender.setBackgroundImage(UIImage(named: "Selected"), for: UIControl.State.normal)
+        let tag = (sender ).tag
+        if tag == 0 {
+            layoutButtons[1].setBackgroundImage(UIImage(named: "Nolayout2"), for: UIControl.State.normal)
+            layoutButtons[2].setBackgroundImage(UIImage(named: "Nolayout3"), for: UIControl.State.normal)
+            showButtons()
+            photoButtons[0].isHidden = true
+        }else if tag == 1{
+            layoutButtons[0].setBackgroundImage(UIImage(named: "Nolayout1"), for: UIControl.State.normal)
+            layoutButtons[2].setBackgroundImage(UIImage(named: "Nolayout3"), for: UIControl.State.normal)
+            showButtons()
+            photoButtons[2].isHidden = true
+        }else if tag == 2{
+            layoutButtons[0].setBackgroundImage(UIImage(named: "Nolayout1"), for: UIControl.State.normal)
+                layoutButtons[1].setBackgroundImage(UIImage(named: "Nolayout2"), for: UIControl.State.normal)
+                showButtons()
+            
+            }
+        }
+    
     @IBAction func holdSwipe(_ sender: UISwipeGestureRecognizer?) {
         if let gesture = sender {
             if UIDevice.current.orientation.isPortrait && gesture.direction == .up {
@@ -78,33 +101,6 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
             }
         }
     }
-    
-    
-    
-    
-    @IBAction func changeLayout(_ sender: UIButton) {
-        sender.setBackgroundImage(UIImage(named: "Selected"), for: UIControl.State.normal)
-        switch sender {
-        case layoutButtons[0]:
-            layoutButtons[1].setBackgroundImage(UIImage(named: "unselect2"), for: UIControl.State.normal)
-            layoutButtons[2].setBackgroundImage(UIImage(named: "unselect3"), for: UIControl.State.normal)
-            showButtons()
-            photoButtons[0].isHidden = true
-        case layoutButtons[1]:
-            layoutButtons[0].setBackgroundImage(UIImage(named: "unselect1"), for: UIControl.State.normal)
-            layoutButtons[2].setBackgroundImage(UIImage(named: "unselect3"), for: UIControl.State.normal)
-            showButtons()
-            photoButtons[2].isHidden = true
-        case layoutButtons[2]:
-            layoutButtons[0].setBackgroundImage(UIImage(named: "unselect1"), for: UIControl.State.normal)
-            layoutButtons[1].setBackgroundImage(UIImage(named: "unselect2"), for: UIControl.State.normal)
-            showButtons()
-        default: break
-        }
-    }
-    
-    
-    
     
     
     @IBAction func didTapeButton(_ sender: Any) {

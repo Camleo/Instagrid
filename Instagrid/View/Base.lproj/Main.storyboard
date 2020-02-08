@@ -123,34 +123,36 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gm8-IF-S40" userLabel="BottomStack View">
                                 <rect key="frame" x="47.666666666666657" y="678" width="280" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-1K-aXl" userLabel="LeftButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYX-4q-Epf" userLabel="RightButton">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="GvK-1K-aXl" secondAttribute="height" multiplier="1:1" id="olk-uE-mgA"/>
+                                            <constraint firstAttribute="width" secondItem="dYX-4q-Epf" secondAttribute="height" multiplier="1:1" id="Adb-E1-kCx"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout1"/>
                                         <connections>
-                                            <action selector="changeLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="alb-LZ-NVw"/>
+                                            <action selector="changeLayouts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ra3-vn-Co6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEP-mt-AVb" userLabel="CentralButton">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvK-1K-aXl" userLabel="centralButton">
                                         <rect key="frame" x="100" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="GvK-1K-aXl" secondAttribute="height" multiplier="1:1" id="olk-uE-mgA"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Layout2">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeLayouts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YA4-Ed-j99"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEP-mt-AVb" userLabel="leftButton">
+                                        <rect key="frame" x="200" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nEP-mt-AVb" secondAttribute="height" multiplier="1:1" id="aF6-8P-pDE"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="Layout2"/>
-                                        <connections>
-                                            <action selector="changeLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSS-Bs-eTv"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnF-Xx-enO" userLabel="RightButton">
-                                        <rect key="frame" x="200" y="0.0" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="XnF-Xx-enO" secondAttribute="height" multiplier="1:1" id="QRb-3e-u4c"/>
-                                        </constraints>
                                         <state key="normal" backgroundImage="Layout3"/>
                                         <connections>
-                                            <action selector="changeLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPi-6v-BOU"/>
+                                            <action selector="changeLayouts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vaO-GZ-oKD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -247,13 +249,13 @@
                         <outlet property="mainView" destination="qdF-eJ-PoX" id="A9Z-uT-I1k"/>
                         <outlet property="swipeImageView" destination="TLH-yW-Ufi" id="dQ7-Vh-dlz"/>
                         <outlet property="swipeLabel" destination="LOF-xG-jSB" id="Sqa-Ie-kFX"/>
-                        <outletCollection property="layoutButtons" destination="XnF-Xx-enO" collectionClass="NSMutableArray" id="jtQ-k3-0oJ"/>
                         <outletCollection property="photoButtons" destination="XM2-NX-NGh" collectionClass="NSMutableArray" id="NRu-lG-xrV"/>
                         <outletCollection property="photoButtons" destination="j6S-5a-b19" collectionClass="NSMutableArray" id="sH8-ma-WxK"/>
                         <outletCollection property="photoButtons" destination="dqL-ys-rrS" collectionClass="NSMutableArray" id="O44-2D-oiS"/>
                         <outletCollection property="photoButtons" destination="CgG-mg-pru" collectionClass="NSMutableArray" id="zBI-Jd-0d8"/>
-                        <outletCollection property="layoutButtons" destination="GvK-1K-aXl" collectionClass="NSMutableArray" id="SfM-NY-qUh"/>
-                        <outletCollection property="layoutButtons" destination="nEP-mt-AVb" collectionClass="NSMutableArray" id="zyC-gF-Yzs"/>
+                        <outletCollection property="layoutButtons" destination="dYX-4q-Epf" collectionClass="NSMutableArray" id="PKJ-1z-GQv"/>
+                        <outletCollection property="layoutButtons" destination="GvK-1K-aXl" collectionClass="NSMutableArray" id="b5P-mq-bAT"/>
+                        <outletCollection property="layoutButtons" destination="nEP-mt-AVb" collectionClass="NSMutableArray" id="ce2-aK-Eoc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
