@@ -72,21 +72,21 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     
     
     @IBAction func changeLayouts(_ sender: UIButton) {
-        sender.setBackgroundImage(UIImage(named: "Selected"), for: UIControl.State.normal)
+        sender.setImage(UIImage(named: "Selected"), for: UIControl.State.normal)
         let tag = (sender ).tag
         if tag == 0 {
-            layoutButtons[1].setBackgroundImage(UIImage(named: "Nolayout2"), for: UIControl.State.normal)
-            layoutButtons[2].setBackgroundImage(UIImage(named: "Nolayout3"), for: UIControl.State.normal)
+            layoutButtons[1].setImage(nil, for: .normal)
+            layoutButtons[2].setImage(nil, for: .normal)
             showButtons()
             photoButtons[0].isHidden = true
         }else if tag == 1{
-            layoutButtons[0].setBackgroundImage(UIImage(named: "Nolayout1"), for: UIControl.State.normal)
-            layoutButtons[2].setBackgroundImage(UIImage(named: "Nolayout3"), for: UIControl.State.normal)
+            layoutButtons[0].setImage(nil, for: .normal)
+            layoutButtons[2].setImage(nil, for: .normal)
             showButtons()
             photoButtons[2].isHidden = true
         }else if tag == 2{
-            layoutButtons[0].setBackgroundImage(UIImage(named: "Nolayout1"), for: UIControl.State.normal)
-                layoutButtons[1].setBackgroundImage(UIImage(named: "Nolayout2"), for: UIControl.State.normal)
+            layoutButtons[0].setImage(nil, for: .normal)
+                layoutButtons[1].setImage(nil, for: .normal)
                 showButtons()
             
             }
@@ -137,6 +137,7 @@ class ViewController: UIViewController , UIImagePickerControllerDelegate, UINavi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.currentButton?.setImage(pickedImage, for: UIControl.State.normal)
+            self.currentButton?.imageView?.contentMode = .scaleAspectFill
             viewIsEmpty = false
             
         }
